@@ -6,21 +6,31 @@
  */
 
 import { ThemeProvider } from '@shopify/restyle';
-import {   SafeAreaView } from 'react-native';
+import { SafeAreaView } from 'react-native';
 import { theme } from './src/theme/theme';
 import { Text } from './src/components';
 
 function App() {
 
   return (
-        <ThemeProvider theme={theme}>
+    <ThemeProvider theme={theme}>
+      <SafeAreaView>
+        <Text
+          preset='headingLarge'
+          bold
+          style={{
+            fontSize: 26,
+            fontFamily: 'Satoshi',
+            fontWeight: '400',
+            fontStyle: 'italic'
+          }}
+        >
+          Olá
+        </Text>
+        <Text preset='paragraphLarge' semiBold > Seja bem vindo ao React js</Text>
 
-    <SafeAreaView>
-    <Text preset='headingLarge' style={{ fontSize: 26, fontFamily: 'Satoshi-BoldItalic'  }} > Olá</Text>
-        <Text preset='paragraphLarge' bold > Seja bem vindo ao React js</Text>
-
-    </SafeAreaView>
-        </ThemeProvider >
+      </SafeAreaView>
+    </ThemeProvider >
 
   );
 }
