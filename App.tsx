@@ -5,24 +5,26 @@
  * @format
  */
 
-import { NewAppScreen } from '@react-native/new-app-screen';
-import { StatusBar, StyleSheet, useColorScheme, View } from 'react-native';
+import { ThemeProvider } from '@shopify/restyle';
+import {   SafeAreaView } from 'react-native';
+import { theme } from './src/theme/theme';
+import { Text } from './src/components';
 
 function App() {
-  const isDarkMode = useColorScheme() === 'dark';
 
   return (
-    <View style={styles.container}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <NewAppScreen templateFileName="App.tsx" />
-    </View>
+        <ThemeProvider theme={theme}>
+
+    <SafeAreaView>
+    <Text preset='headingLarge' style={{ fontSize: 26, fontFamily: 'Satoshi-BoldItalic'  }} > Olá</Text>
+        <Text preset='paragraphLarge' bold > Seja bem vindo ao React js</Text>
+
+    </SafeAreaView>
+        </ThemeProvider >
+
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
+
 
 export default App;
