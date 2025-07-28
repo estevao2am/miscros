@@ -20,6 +20,9 @@ function App() {
           bold
           style={{
             fontSize: 26,
+            fontFamily: 'Satoshi',
+            fontWeight: '400',
+            fontStyle: 'italic'
           }}
         >
           Olá
